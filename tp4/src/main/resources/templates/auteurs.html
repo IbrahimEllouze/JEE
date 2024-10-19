@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+    <title>Auteurs</title>
+</head>
+<body>
+    <h2>Liste des auteurs</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nom</th>
+                <th>Livres</th> <!-- New Column for Books -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="auteur : ${listAuteurs}">
+                <td th:text="${auteur.id}"></td>
+                <td th:text="${auteur.nom}"></td>
+                <td>
+                    <ul>
+                        <li th:each="livre : ${auteur.livres}" th:text="${livre.titre}"></li>
+                    </ul>
+                </td>
+                <td>
+                    <a th:href="@{/auteurs/edit/{id}(id=${auteur.id})}">Modifier</a>
+                    <a th:href="@{/auteurs/delete/{id}(id=${auteur.id})}">Supprimer</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="/auteurs/new">Ajouter un nouveau auteur</a>
+</body>
+</html>

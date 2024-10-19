@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" type="text/css" href="/styles.css">
+
+    <title>Modifier une Categorie</title>
+</head>
+<body>
+    <h2>Modifier la categorie</h2>
+    <form action="#" th:action="@{/categories/update}" th:object="${categorie}" method="post">
+        <input type="hidden" th:field="*{id}" /> <!-- Hidden field for ID -->
+
+        <label for="nom">Nom:</label>
+        <input type="text" id="nom" th:field="*{nom}" /><br><br>
+
+        <input type="submit" value="Modifier categorie" />
+    </form>
+
+    <a href="/auteurs">Retour à la liste des categories</a>
+</body>
+</html>

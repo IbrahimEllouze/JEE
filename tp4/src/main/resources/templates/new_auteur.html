@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" type="text/css" href="/styles.css">
+
+    <title>Ajouter un Auteur</title>
+</head>
+<body>
+    <h2>Ajouter un nouveau auteur</h2>
+    <form action="#" th:action="@{/auteurs/save}" th:object="${auteur}" method="post">
+        <label for="titre">Nom</label>
+        <input type="text" id="titre" th:field="*{nom}" /><br><br>
+
+
+        <input type="submit" value="Ajouter Auteur" />
+    </form>
+
+    <a href="/auteurs">Retour à la liste des auteurs</a>
+</body>
+</html>
