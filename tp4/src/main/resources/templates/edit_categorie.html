@@ -1,11 +1,19 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
 <head>
 <link rel="stylesheet" type="text/css" href="/styles.css">
 
     <title>Modifier une Categorie</title>
 </head>
 <body>
+<!-- Navbar -->
+<nav class="navbar">
+    <a href="/" class="nav-link">Home</a>
+    <a href="/livres" class="nav-link">Manage Livres</a>
+    <a href="/auteurs" class="nav-link">Manage Auteurs</a>
+    <a href="/categories" class="nav-link">Manage Categories</a>
+</nav>
     <h2>Modifier la categorie</h2>
     <form action="#" th:action="@{/categories/update}" th:object="${categorie}" method="post">
         <input type="hidden" th:field="*{id}" /> <!-- Hidden field for ID -->
